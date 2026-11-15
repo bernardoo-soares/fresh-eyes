@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Display name",
+    "audience": "every user",
+    "used": "often"
+  },
+  {
+    "name": "Profile photo",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Email address",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Password",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Two-factor authentication",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Active sessions and devices",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Language",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Time zone",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Date format",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Theme (light/dark/system)",
+    "audience": "every user",
+    "used": "sometimes"
+  },
+  {
+    "name": "Email notifications: mentions",
+    "audience": "every user",
+    "used": "sometimes"
+  },
+  {
+    "name": "Email notifications: weekly digest",
+    "audience": "every user",
+    "used": "sometimes"
+  },
+  {
+    "name": "Push notifications",
+    "audience": "every user",
+    "used": "sometimes"
+  },
+  {
+    "name": "Do-not-disturb hours",
+    "audience": "every user",
+    "used": "sometimes"
+  },
+  {
+    "name": "Keyboard shortcuts",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Workspace name",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Workspace logo",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Workspace URL",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Invite members",
+    "audience": "workspace admins only",
+    "used": "often"
+  },
+  {
+    "name": "Member roles",
+    "audience": "workspace admins only",
+    "used": "sometimes"
+  },
+  {
+    "name": "Guest access",
+    "audience": "workspace admins only",
+    "used": "sometimes"
+  },
+  {
+    "name": "Single sign-on (SAML)",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Allowed email domains",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Audit log",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Plan and seats",
+    "audience": "workspace admins only",
+    "used": "sometimes"
+  },
+  {
+    "name": "Payment method",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Invoices",
+    "audience": "workspace admins only",
+    "used": "sometimes"
+  },
+  {
+    "name": "Slack integration",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Google Drive integration",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "API tokens",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Webhooks",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Export all workspace data",
+    "audience": "workspace admins only",
+    "used": "rare"
+  },
+  {
+    "name": "Delete my account",
+    "audience": "every user",
+    "used": "rare"
+  },
+  {
+    "name": "Delete workspace",
+    "audience": "workspace admins only",
+    "used": "rare"
+  }
+]

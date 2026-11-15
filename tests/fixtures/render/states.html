@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Filled states and pairs</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 0; padding: 24px; color: #111; background: #fff; }
+  button, a { font: inherit; display: inline-block; padding: 8px 14px; margin: 4px; border: 0; border-radius: 6px; color: #fff; text-decoration: none; }
+  .accent { background: #1d4ed8; }
+  .accept { background: #15803d; }
+  .decline { background: #b91c1c; }
+</style></head>
+<body>
+  <!-- Selection and state drawn in the accent are not actions competing with the primary one. -->
+  <button class="accent" role="switch" aria-checked="true" aria-label="Email alerts">On</button>
+  <button class="accent" aria-pressed="true">Unread</button>
+  <div role="tablist"><button class="accent" role="tab" aria-selected="true">Overview</button></div>
+  <nav><a class="accent" href="#home" aria-current="page">Home</a></nav>
+  <button class="accent" type="button">Send invoice</button>
+  <!-- Two answers in two colours: a decision, not a fight between two primaries. -->
+  <p><button class="accept" type="button">Accept</button><button class="decline" type="button">Decline</button></p>
+</body></html>

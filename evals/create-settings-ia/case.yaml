@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-settings-ia
+expected_outcome: |
+  A settings structure grouped in people's words, with personal settings separated from workspace-admin settings, frequent options easy to reach, every one of the 34 options present exactly once, destructive actions set apart and guarded, and a short rationale in structure.md.
+context:
+  scaffold_script: place-files.sh

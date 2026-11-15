@@ -1,0 +1,10 @@
+---
+tags: [fresh-eyes]
+max_turns: 60
+timeout_seconds: 1800
+allowed_tools: [Read, Glob, Grep, Skill, Write, Edit, Bash, Agent]
+---
+
+Here's our Settings page: settings.html. Improve the UI wherever it's needed.
+
+Input files: settings.html

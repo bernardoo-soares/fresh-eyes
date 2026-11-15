@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: review-good-settings
+expected_outcome: |
+  The page already meets WCAG 2.2 AA and has no clarity problem, so the result says no change is needed (or proposes at most clearly-labelled optional opinions) instead of inventing changes.
+context:
+  scaffold_script: place-files.sh

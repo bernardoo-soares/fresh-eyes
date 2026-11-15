@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Colours in oklch</title>
+<style>
+  /* Colours written the way Tailwind v4 and current shadcn/ui write them. */
+  body { font: 16px system-ui, sans-serif; margin: 0; padding: 24px; color: oklch(0.21 0.006 285); background: oklch(1 0 0); }
+  button { font: inherit; padding: 10px 16px; border: 0; border-radius: 6px; margin-right: 8px; }
+  .secondary { background: oklch(0.967 0.001 286); color: oklch(0.21 0.006 285); }
+  .primary { background: oklch(0.55 0.2 260); color: oklch(0.985 0 0); }
+  nav a { display: block; padding: 8px 12px; color: inherit; text-decoration: none; }
+  #inset-stripe { box-shadow: inset 3px 0 0 oklch(0.55 0.2 260); }
+  #neutral-edge { border-left: 3px solid oklch(0.92 0.004 286); }
+</style></head>
+<body>
+  <p><button class="secondary" type="button">Cancel</button><button class="primary" type="button">Save changes</button></p>
+  <nav aria-label="Main"><a id="inset-stripe" href="#a">Inset stripe</a><a id="neutral-edge" href="#b">Neutral edge</a></nav>
+</body></html>

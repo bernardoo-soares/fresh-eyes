@@ -1,0 +1,67 @@
+{
+  "person": "Ana",
+  "currency": "EUR",
+  "total": 4826.4,
+  "change_this_month": 312,
+  "pots": [
+    {
+      "name": "Rainy day",
+      "balance": 2400,
+      "goal": 3000
+    },
+    {
+      "name": "Lisbon flat deposit",
+      "balance": 1980.4,
+      "goal": 12000,
+      "goal_date": "2028-06-01"
+    },
+    {
+      "name": "Christmas",
+      "balance": 446,
+      "goal": 500,
+      "goal_date": "2026-12-15"
+    }
+  ],
+  "round_ups": {
+    "on": true,
+    "this_month": 18.4
+  },
+  "next_scheduled": {
+    "amount": 150,
+    "date": "2026-11-15",
+    "to": "Lisbon flat deposit"
+  },
+  "recent": [
+    {
+      "date": "2026-11-12",
+      "what": "Round-ups",
+      "pot": "Rainy day",
+      "amount": 4.2
+    },
+    {
+      "date": "2026-11-10",
+      "what": "Moved to Christmas",
+      "pot": "Christmas",
+      "amount": 50
+    },
+    {
+      "date": "2026-11-08",
+      "what": "Interest",
+      "pot": "Rainy day",
+      "amount": 6.1
+    },
+    {
+      "date": "2026-11-03",
+      "what": "Withdrawal to current account",
+      "pot": "Rainy day",
+      "amount": -120
+    },
+    {
+      "date": "2026-11-01",
+      "what": "Monthly transfer",
+      "pot": "Lisbon flat deposit",
+      "amount": 150
+    }
+  ],
+  "interest_rate_aer": 0.0275
+}

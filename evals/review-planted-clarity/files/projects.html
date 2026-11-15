@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects</title>
+<style>
+  :root { --bg:#ffffff; --panel:#f6f7f9; --text:#1d2330; --muted:#5b6475; --line:#dde1e8; --accent:#2f5bea; --on-accent:#fff; --danger:#c62828; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1218; --panel:#171b23; --text:#e8ebf1; --muted:#a3abba; --line:#2a303b; --accent:#7c9cff; --on-accent:#0f1218; --danger:#ff8a80; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); }
+  .shell { display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
+  nav { background:var(--panel); border-right:1px solid var(--line); padding:16px 12px; }
+  nav a { display:block; padding:8px 10px; border-radius:6px; color:var(--text); text-decoration:none; }
+  nav a:hover { background:var(--line); }
+  main { padding:24px 32px; }
+  .top { display:flex; align-items:center; gap:12px; }
+  .top h1 { font-size:22px; margin:0; flex:1; }
+  .btn { height:36px; padding:0 14px; border-radius:6px; border:0; font:inherit; font-weight:600; background:var(--accent); color:var(--on-accent); cursor:pointer; }
+  .icon { width:36px; height:36px; border-radius:6px; border:1px solid var(--line); background:transparent; color:var(--text); cursor:pointer; }
+  .toolbar { display:flex; gap:8px; margin:20px 0 12px; }
+  .toolbar input { height:36px; flex:1; max-width:320px; padding:0 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--text); font:inherit; }
+  .toolbar input::placeholder { color:#c3c8d1; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { text-align:left; color:var(--muted); font-weight:600; padding:6px 8px; border-bottom:1px solid var(--line); }
+  td { padding:6px 8px; border-bottom:1px solid var(--line); }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-block; padding:1px 8px; border-radius:99px; font-size:12px; }
+  .pill.ok { background:#2e7d32; color:#fff; } .pill.late { background:#c62828; color:#fff; } .pill.hold { background:#ef6c00; color:#fff; }
+  .muted { color:var(--muted); }
+  .empty { margin-top:28px; padding:20px; border:1px dashed var(--line); border-radius:8px; color:var(--muted); }
+  .danger-row { margin-top:28px; display:flex; gap:8px; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav aria-label="Main">
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">Resources</a>
+    <a href="#">Insights</a>
+    <a href="#">Admin</a>
+  </nav>
+  <main>
+    <div class="top">
+      <h1>Overview</h1>
+      <button class="icon" type="button" title="">&#x21bb;</button>
+      <button class="btn" type="button">Save</button>
+      <button class="btn" type="button">Publish</button>
+      <button class="btn" type="button">Process</button>
+    </div>
+    <div class="toolbar">
+      <input type="search" placeholder="Search projects by name or client">
+      <button class="icon" type="button">&#x2699;</button>
+    </div>
+    <table>
+      <thead><tr><th>Project</th><th>Client</th><th>Owner</th><th>Due</th><th class="num">Budget used</th><th>State</th></tr></thead>
+      <tbody>
+        <tr><td>Website relaunch</td><td>Harbor Dental</td><td>M. Duarte</td><td>2026-12-04</td><td class="num">62%</td><td><span class="pill ok">&#9679;</span></td></tr>
+        <tr><td>Brand refresh</td><td>Lumen Bakery</td><td>S. Lindqvist</td><td>11/20/2026</td><td class="num">104%</td><td><span class="pill late">&#9679;</span></td></tr>
+        <tr><td>Intranet</td><td>Kestrel Offices</td><td>A. Mensah</td><td>2026-11-28</td><td class="num">38%</td><td><span class="pill hold">&#9679;</span></td></tr>
+        <tr><td>Patient app</td><td>St. Clare Clinic</td><td>J. Park</td><td>3 Jan</td><td class="num">71%</td><td><span class="pill ok">&#9679;</span></td></tr>
+        <tr><td>Menu boards</td><td>Northgate Deli</td><td>M. Duarte</td><td>2026-11-19</td><td class="num">96%</td><td><span class="pill late">&#9679;</span></td></tr>
+        <tr><td>Booking flow</td><td>Halcyon Spa</td><td>S. Lindqvist</td><td>2026-12-15</td><td class="num">12%</td><td><span class="pill ok">&#9679;</span></td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:13px;margin-top:8px">6 projects &middot; budgets as of today</p>
+    <div class="empty">No entities match the current predicate (ERR_NULL_SET). Adjust parameters.</div>
+    <div class="danger-row">
+      <button class="btn" type="button">Export</button>
+      <button class="btn" type="button" onclick="document.querySelector('tbody').innerHTML=''">Delete all</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>

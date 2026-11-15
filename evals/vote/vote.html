@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which is better?</title>
+<style>
+:root { --bg: #f5f5f7; --surface: #ffffff; --fg: #1d1d1f; --muted: #5b5b63; --line: #d9d9de; --accent: #0a5c7a; --accent-fg: #ffffff; --warn: #a1260d; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #111114; --surface: #1c1c21; --fg: #f2f2f5; --muted: #a3a3ad; --line: #34343c; --accent: #5cc1e6; --accent-fg: #06222c; --warn: #ff8a73; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; display: grid; grid-template-rows: auto 1fr auto; }
+header { display: flex; align-items: center; gap: 16px; padding: 12px 20px; border-bottom: 1px solid var(--line); background: var(--surface); }
+header h1 { font-size: 17px; margin: 0; }
+header .job { color: var(--muted); margin: 0; }
+header .grow { flex: 1; min-width: 0; }
+.progress { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.bar { height: 4px; background: var(--line); border-radius: 2px; width: 140px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); width: 0; }
+button, .toggle { font: inherit; }
+.toggle { border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.toggle:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+main { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 20px; min-height: 0; }
+.side { display: grid; grid-template-rows: auto 1fr auto; min-height: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.side h2 { margin: 0; padding: 8px 12px; font-size: 15px; border-bottom: 1px solid var(--line); }
+.scroll { overflow: auto; min-height: 0; background: var(--bg); }
+.scroll img { display: block; width: 100%; height: auto; }
+.scroll.phone img { width: 390px; max-width: 100%; margin: 0 auto; }
+.worse { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--line); color: var(--muted); cursor: pointer; }
+.worse input { width: 16px; height: 16px; accent-color: var(--warn); }
+footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid var(--line); background: var(--surface); }
+.choice { border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 10px; padding: 10px 20px; cursor: pointer; font-weight: 600; min-width: 150px; }
+.choice:hover { border-color: var(--accent); }
+.choice.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.choice kbd { font: 12px ui-monospace, Consolas, monospace; opacity: .7; margin-left: 6px; }
+.note { flex: 1; min-width: 200px; resize: vertical; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 8px; padding: 9px 12px; font: inherit; }
+.done { grid-column: 1 / -1; display: grid; place-content: center; text-align: center; gap: 8px; }
+.done p { color: var(--muted); margin: 0; }
+.status { color: var(--warn); }
+main.flip { grid-template-columns: 1fr; }
+main.flip .side.hidden-side { display: none; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="grow"><h1 id="name">Loading</h1><p class="job" id="job"></p></div>
+  <button type="button" class="toggle" id="mode" aria-pressed="false" title="One version at full size; Space switches A and B">Flip view</button>
+  <button type="button" class="toggle" id="device" aria-pressed="false" hidden>Show phone</button>
+  <button type="button" class="toggle" id="theme" aria-pressed="false">Show dark</button>
+  <div><div class="progress" id="count"></div><div class="bar" aria-hidden="true"><i id="fill"></i></div></div>
+</header>
+<main id="stage">
+  <section class="side" aria-labelledby="ha"><h2 id="ha">Version A</h2><div class="scroll" id="sa"><img id="ia" alt="Version A of the screen"></div>
+    <label class="worse"><input type="checkbox" id="wa"> Something got worse in A</label></section>
+  <section class="side" aria-labelledby="hb"><h2 id="hb">Version B</h2><div class="scroll" id="sb"><img id="ib" alt="Version B of the screen"></div>
+    <label class="worse"><input type="checkbox" id="wb"> Something got worse in B</label></section>
+</main>
+<footer>
+  <button type="button" class="choice" data-choice="left">A is better<kbd>1</kbd></button>
+  <button type="button" class="choice" data-choice="same">About the same<kbd>3</kbd></button>
+  <button type="button" class="choice" data-choice="right">B is better<kbd>2</kbd></button>
+  <label for="note" class="sr" style="position:absolute;left:-9999px">Note</label>
+  <textarea class="note" id="note" rows="2" placeholder="Note (optional): what you prefer from each version" maxlength="5000"></textarea>
+  <span class="status" id="status" role="status"></span>
+  <span class="progress">Keys: 1 A, 2 B, 3 same, D dark, P phone, Space flips</span>
+</footer>
+<script>
+const $ = (id) => document.getElementById(id);
+let round = null;
+let dark = false;
+let urls = null;
+let flip = false;
+let showing = 'a';
+let phone = false;
+let hasPhone = false;
+
+// Flip view: one version at full width, Space switches between them in place, which makes differences jump out.
+function layout() {
+  $('stage').classList.toggle('flip', flip);
+  document.querySelectorAll('.side').forEach((el, i) => el.classList.toggle('hidden-side', flip && (i === 0 ? showing !== 'a' : showing !== 'b')));
+  $('mode').textContent = flip ? 'Side by side' : 'Flip view';
+  $('mode').setAttribute('aria-pressed', String(flip));
+}
+
+function show() {
+  const t = (phone ? 'phone-' : '') + (dark ? 'dark' : 'light');
+  $('ia').src = urls.left[t];
+  $('ib').src = urls.right[t];
+  $('sa').classList.toggle('phone', phone);
+  $('sb').classList.toggle('phone', phone);
+  $('theme').textContent = dark ? 'Show light' : 'Show dark';
+  $('theme').setAttribute('aria-pressed', String(dark));
+  $('device').textContent = phone ? 'Show desktop' : 'Show phone';
+  $('device').setAttribute('aria-pressed', String(phone));
+}
+
+async function next() {
+  const r = await (await fetch('/api/next')).json();
+  $('count').textContent = `${r.done} of ${r.total}`;
+  $('fill').style.width = r.total ? `${(r.done / r.total) * 100}%` : '100%';
+  if (r.finished) {
+    round = null;
+    $('name').textContent = 'All done';
+    $('job').textContent = '';
+    $('stage').innerHTML = '<div class="done"><h2>Every round is voted</h2><p>Thank you. The results are in votes.json.</p></div>';
+    document.querySelector('footer').hidden = true;
+    return;
+  }
+  round = r.round;
+  urls = { left: r.left, right: r.right };
+  hasPhone = Boolean(r.phone);
+  phone = hasPhone && r.start === 'phone';
+  $('device').hidden = !hasPhone;
+  $('name').textContent = r.name;
+  $('job').textContent = r.job;
+  $('wa').checked = false; $('wb').checked = false; $('note').value = '';
+  $('sa').scrollTop = 0; $('sb').scrollTop = 0;
+  showing = 'a';
+  layout();
+  show();
+}
+
+async function vote(choice) {
+  if (!round) return;
+  const worse = [['left', $('wa')], ['right', $('wb')]].filter(([, el]) => el.checked).map(([s]) => s);
+  const res = await fetch('/api/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ round, choice, worse, note: $('note').value }) });
+  if (!res.ok) { $('status').textContent = "Couldn't save that vote. Check that the voting server is still running, then try again."; return; }
+  $('status').textContent = '';
+  next();
+}
+
+// Both sides scroll together so the same part of the screen is always compared.
+let syncing = false;
+for (const [a, b] of [['sa', 'sb'], ['sb', 'sa']]) {
+  $(a).addEventListener('scroll', () => {
+    if (syncing) { syncing = false; return; }
+    syncing = true;
+    $(b).scrollTop = $(a).scrollTop;
+  });
+}
+for (const b of document.querySelectorAll('.choice')) b.addEventListener('click', () => vote(b.dataset.choice));
+$('theme').addEventListener('click', () => { dark = !dark; show(); });
+$('device').addEventListener('click', () => { if (hasPhone) { phone = !phone; show(); } });
+$('mode').addEventListener('click', () => { flip = !flip; showing = 'a'; layout(); });
+document.addEventListener('keydown', (e) => {
+  if (e.target === $('note')) return;
+  if (e.key === '1') vote('left');
+  else if (e.key === '2') vote('right');
+  else if (e.key === '3') vote('same');
+  else if (e.key === 'd') { dark = !dark; show(); }
+  else if (e.key === 'p' && hasPhone) { phone = !phone; show(); }
+  else if (e.key === ' ' && flip) {
+    e.preventDefault();
+    const top = (showing === 'a' ? $('sa') : $('sb')).scrollTop;
+    showing = showing === 'a' ? 'b' : 'a';
+    layout();
+    (showing === 'a' ? $('sa') : $('sb')).scrollTop = top;
+  }
+});
+next();
+</script>
+</body>
+</html>

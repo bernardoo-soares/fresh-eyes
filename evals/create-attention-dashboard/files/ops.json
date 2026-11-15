@@ -1,0 +1,67 @@
+{
+  "company": "Brightline Field Services",
+  "date": "2026-11-12",
+  "jobs_today": {
+    "total": 38,
+    "completed": 0,
+    "scheduled": 33,
+    "unassigned": 5
+  },
+  "overdue_from_yesterday": [
+    {
+      "job": "J-20931",
+      "customer": "Harbor Dental",
+      "type": "HVAC repair",
+      "promised": "2026-11-11 16:00"
+    },
+    {
+      "job": "J-20944",
+      "customer": "Lumen Bakery",
+      "type": "Freezer fault",
+      "promised": "2026-11-11 12:00"
+    },
+    {
+      "job": "J-20950",
+      "customer": "Kestrel Offices",
+      "type": "Annual service",
+      "promised": "2026-11-11 10:00"
+    }
+  ],
+  "sla_at_risk": [
+    {
+      "job": "J-21002",
+      "customer": "St. Clare Clinic",
+      "sla": "4h emergency",
+      "deadline": "2026-11-12 11:30",
+      "status": "unassigned"
+    }
+  ],
+  "technicians": {
+    "on_shift": 14,
+    "off_sick": [
+      "Rui Matos",
+      "Dana Okafor"
+    ],
+    "vans_in_service": 1
+  },
+  "metrics": {
+    "first_time_fix_rate": {
+      "value": 0.82,
+      "target": 0.85,
+      "last_month": 0.84
+    },
+    "avg_rating_30d": {
+      "value": 4.6,
+      "out_of": 5
+    },
+    "revenue_mtd": {
+      "value": 184250,
+      "currency": "EUR",
+      "target_month": 420000
+    },
+    "jobs_completed_mtd": 412,
+    "avg_travel_minutes": 27,
+    "parts_backordered": 6,
+    "open_quotes": 19
+  }
+}

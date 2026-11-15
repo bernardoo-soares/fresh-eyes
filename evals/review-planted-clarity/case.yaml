@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: review-planted-clarity
+expected_outcome: |
+  A review that finds the planted clarity defects (no current page in the navigation and a heading that does not match it, three competing primary buttons with a vague "Process", an unlabelled icon button, status shown only by colour dots, inconsistent date formats, a placeholder used as the only label and too faint to read, a jargon empty state, and a "Delete all" styled like "Export" next to it with no confirmation), leaves the two decoys alone (13 px table text and right-aligned budget numbers are deliberate and fine), and shows an improved version that fixes what it found.
+context:
+  scaffold_script: place-files.sh

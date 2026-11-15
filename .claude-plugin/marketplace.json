@@ -1,0 +1,13 @@
+{
+  "name": "fresh-eyes",
+  "description": "The fresh-eyes skill and its first-look agent.",
+  "owner": {
+    "name": "Bernardo Soares"
+  },
+  "plugins": [
+    {
+      "name": "fresh-eyes",
+      "source": "./"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Snapshot fixture</title>
+<link rel="stylesheet" href="app.css">
+<style>.injected-later { border: 2px solid currentColor; }</style>
+</head>
+<body>
+<main id="root">Loading</main>
+<script>
+  // Theme the way next-themes does: a class on <html> chosen from localStorage.
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+  // Render after load, like a SPA, so a snapshot of the raw HTML would miss it.
+  window.addEventListener('load', () => {
+    const state = localStorage.getItem('demoState') || 'default';
+    const today = new Date().toISOString().slice(0, 10);
+    document.getElementById('root').innerHTML = `
+      <section class="card injected-later"><h1>Loans</h1>
+        <p data-test="state">state: ${state}</p>
+        <p data-test="today">today: ${today}</p>
+      </section>
+      <div class="hero" data-test="hero"></div>
+      <img data-test="img" src="blue.png" alt="Blue square" width="32" height="32">
+      <label>Search <input data-test="input" type="text"></label>
+      <label><input data-test="check" type="checkbox"> Email reminders</label>
+      <select data-test="select"><option>EUR</option><option>GBP</option></select>
+      <canvas data-test="canvas" width="120" height="40"></canvas>
+      <button data-test="open" type="button">Open dialog</button>
+      <div data-test="dialog" hidden><p>Return this book?</p></div>`;
+    document.querySelector('[data-test=input]').value = 'acme';
+    document.querySelector('[data-test=check]').checked = true;
+    document.querySelector('[data-test=select]').value = 'GBP';
+    const ctx = document.querySelector('canvas').getContext('2d');
+    ctx.fillStyle = '#0a7'; ctx.fillRect(0, 0, 120, 40);
+    document.querySelector('[data-test=open]').addEventListener('click', () => {
+      document.querySelector('[data-test=dialog]').hidden = false;
+    });
+  });
+</script>
+</body>
+</html>

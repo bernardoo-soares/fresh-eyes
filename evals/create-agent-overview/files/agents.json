@@ -1,0 +1,77 @@
+{
+  "workspace": "Harbour & Pine (online homeware shop)",
+  "date": "2026-11-13",
+  "agents": [
+    {
+      "name": "Inbox triage",
+      "job": "Reads incoming customer emails and routes them to the right queue",
+      "status": "running",
+      "runs_today": 412,
+      "handled_without_human": 0.94,
+      "avg_seconds": 6,
+      "last_error": null
+    },
+    {
+      "name": "Refund drafts",
+      "job": "Drafts refund replies for damaged or late orders; a person approves each one",
+      "status": "waiting for approval",
+      "runs_today": 37,
+      "awaiting_approval": 3,
+      "oldest_waiting_minutes": 52,
+      "last_error": null
+    },
+    {
+      "name": "Stock questions",
+      "job": "Answers \"is this back in stock?\" emails from the stock feed",
+      "status": "failing",
+      "runs_today": 58,
+      "failed_today": 21,
+      "last_error": "Stock feed returned 401 Unauthorized since 09:12",
+      "handled_without_human": 0.6
+    },
+    {
+      "name": "Review replies",
+      "job": "Drafts public replies to product reviews under 3 stars",
+      "status": "paused",
+      "runs_today": 0,
+      "paused_by": "Marta Lopes",
+      "paused_reason": "Tone check after a complaint",
+      "paused_since": "2026-11-12 17:40"
+    }
+  ],
+  "awaiting_approval": [
+    {
+      "id": "R-8812",
+      "customer": "Joana Reis",
+      "summary": "Lamp arrived cracked; asks for a refund of €89.00",
+      "drafted": "08:41"
+    },
+    {
+      "id": "R-8815",
+      "customer": "Tom Becker",
+      "summary": "Rug delivered 9 days late; asks for delivery fee back (€12.50)",
+      "drafted": "09:02"
+    },
+    {
+      "id": "R-8819",
+      "customer": "Aiko Tanaka",
+      "summary": "Two of six glasses broken; asks for partial refund of €18.00",
+      "drafted": "09:30"
+    }
+  ],
+  "totals_today": {
+    "runs": 507,
+    "handled_without_human": 0.88,
+    "human_minutes_saved": 410,
+    "cost_eur": 6.84
+  },
+  "last_7_days_runs": [
+    431,
+    455,
+    398,
+    470,
+    502,
+    389,
+    507
+  ]
+}

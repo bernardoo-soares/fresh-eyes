@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings · Acme</title>
+<style>
+  :root { --bg:#ffffff; --surface:#f2f2f7; --label:#000000; --label-2:#3c3c43; --accent:#0060df; --on-accent:#ffffff; --sep:#d1d1d6; --field-border:#8a8a8e; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#000000; --surface:#1c1c1e; --label:#ffffff; --label-2:#d1d1d6; --accent:#409cff; --on-accent:#000000; --sep:#38383a; --field-border:#6b6b70; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:1rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background:var(--bg); color:var(--label); }
+  header { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid var(--sep); }
+  h1 { font-size:1.75rem; line-height:1.2; margin:0; }
+  main { max-width:720px; margin:0 auto; padding:24px 16px; }
+  section { background:var(--surface); border-radius:12px; padding:16px; margin-bottom:24px; }
+  h2 { font-size:1.0625rem; margin:0 0 12px; }
+  label { display:block; font-weight:600; margin-bottom:4px; }
+  p.hint { color:var(--label-2); margin:4px 0 0; font-size:0.9375rem; }
+  input { width:100%; min-height:44px; padding:8px 12px; font:inherit; border:1px solid var(--field-border); border-radius:8px; background:var(--bg); color:var(--label); }
+  button { min-height:44px; min-width:44px; padding:0 20px; font:inherit; font-weight:600; border:0; border-radius:10px; background:var(--accent); color:var(--on-accent); cursor:pointer; }
+  :focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<header><h1>Settings</h1><button type="button">Save changes</button></header>
+<main>
+  <section aria-labelledby="profile-h">
+    <h2 id="profile-h">Profile</h2>
+    <label for="name">Full name</label>
+    <input id="name" name="name" autocomplete="name" value="Ana Silva">
+    <p class="hint">Shown to people in your workspace.</p>
+  </section>
+  <section aria-labelledby="email-h">
+    <h2 id="email-h">Email</h2>
+    <label for="email">Work email</label>
+    <input id="email" name="email" type="email" autocomplete="email" value="ana@acme.com">
+  </section>
+</main>
+</body>
+</html>

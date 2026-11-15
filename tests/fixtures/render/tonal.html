@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tonal buttons</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 0; padding: 24px; color: #111; background: #fff; }
+  button { font: inherit; padding: 8px 14px; margin: 4px; border: 0; border-radius: 999px; }
+  .primary { background: #0d6b52; color: #fff; }
+  /* A soft accent tint: pale in light, a dark muted green in dark. Not a filled accent in either. */
+  .tonal { background: #dcefe7; color: #0a5843; }
+  /* A near-black with a hint of blue: a neutral, however saturated its few bits of colour look. */
+  .dark-neutral { background: #111827; color: #fff; }
+  .pot { display: flex; justify-content: space-between; align-items: center; max-width: 420px; padding: 8px 0; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1513; color: #e8f0ec; }
+    .primary { background: #5fd0a6; color: #0f1513; }
+    .tonal { background: #173a2f; color: #8fe2c3; }
+    .dark-neutral { background: #1e293b; color: #fff; }
+  }
+</style></head>
+<body>
+  <p><button class="primary" type="button">Add money</button><button class="dark-neutral" type="button">Export</button></p>
+  <div class="pot"><span>Rainy day</span><button class="tonal" type="button">Add</button></div>
+  <div class="pot"><span>Flat deposit</span><button class="tonal" type="button">Add</button></div>
+  <div class="pot"><span>Holidays</span><button class="tonal" type="button">Add</button></div>
+</body></html>

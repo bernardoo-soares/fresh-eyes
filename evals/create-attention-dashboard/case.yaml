@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-attention-dashboard
+expected_outcome: |
+  A morning dashboard that leads with what needs a decision today (the SLA job at risk and unassigned, five unassigned jobs, three overdue jobs, two technicians off sick) and gives the routine metrics less weight, with every number from ops.json.
+context:
+  scaffold_script: place-files.sh

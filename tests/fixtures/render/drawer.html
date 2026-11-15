@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Closed drawer</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 0; padding: 24px; color: #111; background: #fff; overflow-x: hidden; }
+  button { font: inherit; padding: 8px 14px; border: 1px solid #555; border-radius: 6px; background: #fff; color: #111; }
+  button:focus-visible { outline: 2px solid #1d4ed8; outline-offset: 2px; }
+  /* Slides into view when focused: on screen once the focus change has drawn, so not reported. */
+  .skip { position: absolute; left: 12px; top: -48px; padding: 8px 12px; background: #1d4ed8; color: #fff; transition: top 200ms; }
+  .skip:focus { top: 12px; }
+  /* Closed by moving it off the right edge, still in the tab order: focus lands somewhere nobody can see. */
+  .drawer { position: fixed; top: 0; right: 0; width: 320px; height: 100%; background: #f4f4f5; transform: translateX(100%); }
+  /* A segmented control: each radio is transparent and its label shows the focus ring, so focus is visible. */
+  .segmented label { position: relative; display: inline-block; }
+  .segmented input { position: absolute; inset: 0; margin: 0; opacity: 0; }
+  .segmented span { display: block; padding: 6px 12px; border-radius: 6px; }
+  .segmented input:focus-visible + span { outline: 2px solid #1d4ed8; outline-offset: 1px; }
+  /* A toast hidden by opacity, its button still in the tab order. */
+  .toast { position: fixed; left: 24px; bottom: 24px; padding: 8px 12px; background: #111; color: #fff; opacity: 0; }
+</style></head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <main id="main">
+    <button type="button">Open filters</button>
+    <aside class="drawer"><button type="button">Close filters</button></aside>
+    <button type="button">Apply</button>
+    <div class="segmented" role="radiogroup" aria-label="Period"><label><input type="radio" name="period" checked><span>Weekly</span></label><label><input type="radio" name="period"><span>Monthly</span></label></div>
+    <div class="toast" role="status">Filters cleared <button type="button">Undo</button></div>
+  </main>
+</body></html>

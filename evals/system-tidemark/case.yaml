@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: system-tidemark
+expected_outcome: |
+  A token system with semantic colour roles for light and dark (and ideally increased contrast), a type scale in rem, spacing, radius and motion, all contrast-checked by measurement, applied to a day-of-appointments sample screen where the brand colour is used for emphasis rather than everywhere.

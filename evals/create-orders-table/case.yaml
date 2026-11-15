@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-orders-table
+expected_outcome: |
+  A dense, scannable orders table: findable by order number or customer, payment and fulfilment status readable at a glance without relying on colour, amounts right-aligned in tabular figures, dates in one format, and usable on a phone.
+context:
+  scaffold_script: place-files.sh

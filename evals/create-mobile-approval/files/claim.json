@@ -1,0 +1,46 @@
+{
+  "claim_id": "EXP-7731",
+  "employee": {
+    "name": "Inês Carvalho",
+    "team": "Sales, Iberia"
+  },
+  "submitted": "2026-11-10",
+  "trip": "Client visit, Porto, 3–4 Nov 2026",
+  "project_code": "PRJ-ATLAS",
+  "currency": "EUR",
+  "lines": [
+    {
+      "date": "2026-11-03",
+      "category": "Train",
+      "amount": 62.4,
+      "receipt": true
+    },
+    {
+      "date": "2026-11-03",
+      "category": "Hotel (1 night)",
+      "amount": 210,
+      "receipt": true,
+      "policy": {
+        "limit": 180,
+        "rule": "Hotel max €180 per night in Porto"
+      }
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Client dinner (4 people)",
+      "amount": 298,
+      "receipt": true
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Taxi",
+      "amount": 42,
+      "receipt": false
+    }
+  ],
+  "total": 612.4,
+  "approver_budget_left": {
+    "project": "PRJ-ATLAS",
+    "amount": 1840
+  }
+}

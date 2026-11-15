@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tells</title>
+<style>
+  body { font: 16px system-ui, sans-serif; padding: 24px; color: #111; background: #fff; }
+  nav a { display: block; padding: 8px 12px; color: #111; text-decoration: none; }
+  #border-stripe { border-left: 3px solid #2f5bea; }
+  #inset-stripe { box-shadow: inset 3px 0 0 #2f5bea; }
+  .callout { position: relative; padding: 12px 16px; margin: 12px 0; background: #f4f4f5; }
+  .callout::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: #d97706; }
+  .tabs a { display: inline-block; padding: 8px 12px; color: #111; text-decoration: none; }
+  #tab-underline { border-bottom: 2px solid #2f5bea; }
+  #all-sides { border: 2px solid #2f5bea; padding: 8px; margin-top: 12px; }
+</style></head>
+<body>
+  <nav aria-label="Main">
+    <a id="border-stripe" href="#a">Border stripe</a>
+    <a id="inset-stripe" href="#b">Inset stripe</a>
+    <a href="#c">Plain</a>
+  </nav>
+  <div class="callout">Pseudo-element bar</div>
+  <div class="tabs"><a id="tab-underline" href="#d">Underlined tab</a><a href="#e">Other tab</a></div>
+  <p id="all-sides">A box bordered on every side is not a stripe.</p>
+  <p>One sentence with an em dash — right here.</p>
+  <p><span style="text-transform: uppercase; letter-spacing: .08em; font-size: 12px">Current plan</span> <a href="#f">PDF</a></p>
+</body></html>

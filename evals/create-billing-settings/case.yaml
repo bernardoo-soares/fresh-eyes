@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-billing-settings
+expected_outcome: |
+  A billing page built from the task people come for (download an invoice, check or change the card, see what the next charge will be), with the plan and seats clear, the 14 of 15 seats surfaced, upgrade present but not dominating, and every figure taken from billing.json.
+context:
+  scaffold_script: place-files.sh

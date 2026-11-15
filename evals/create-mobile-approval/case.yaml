@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-mobile-approval
+expected_outcome: |
+  A phone screen where the total and the two problems (hotel over the €180 policy limit, taxi without receipt) are seen before the decision, approve and reject are large and within thumb reach, and rejecting or partially approving asks for a reason.
+context:
+  scaffold_script: place-files.sh

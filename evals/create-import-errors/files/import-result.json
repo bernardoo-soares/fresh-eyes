@@ -1,0 +1,150 @@
+{
+  "file": "contacts.csv",
+  "rows_total": 412,
+  "imported": 389,
+  "failed": 23,
+  "finished_at": "2026-11-12T09:41:07Z",
+  "errors": [
+    {
+      "row": 14,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "ana.silva@gmail"
+    },
+    {
+      "row": 37,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "joao@@acme.pt"
+    },
+    {
+      "row": 52,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "m.lee at corp.com"
+    },
+    {
+      "row": 88,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "sara@"
+    },
+    {
+      "row": 101,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "tom@corp"
+    },
+    {
+      "row": 150,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "li.wei@"
+    },
+    {
+      "row": 199,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "p.k@example."
+    },
+    {
+      "row": 233,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "x@y"
+    },
+    {
+      "row": 287,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "hello@"
+    },
+    {
+      "row": 341,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "@acme.pt"
+    },
+    {
+      "row": 390,
+      "code": "E_EMAIL_FORMAT",
+      "field": "email",
+      "value": "r.diaz@acme..pt"
+    },
+    {
+      "row": 9,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 44,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 45,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 46,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 210,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 211,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 305,
+      "code": "E_REQUIRED",
+      "field": "company",
+      "value": ""
+    },
+    {
+      "row": 61,
+      "code": "E_DUPLICATE",
+      "field": "email",
+      "value": "c.nunes@verde.pt",
+      "existing_contact": "Carla Nunes"
+    },
+    {
+      "row": 177,
+      "code": "E_DUPLICATE",
+      "field": "email",
+      "value": "h.ito@kaiko.jp",
+      "existing_contact": "Hana Ito"
+    },
+    {
+      "row": 260,
+      "code": "E_DUPLICATE",
+      "field": "email",
+      "value": "b.ross@finch.co.uk",
+      "existing_contact": "Ben Ross"
+    },
+    {
+      "row": 118,
+      "code": "E_PHONE_E164",
+      "field": "phone",
+      "value": "912 345 67"
+    },
+    {
+      "row": 402,
+      "code": "E_PHONE_E164",
+      "field": "phone",
+      "value": "00351-21-xx"
+    }
+  ]
+}

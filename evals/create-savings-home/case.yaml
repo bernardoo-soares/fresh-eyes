@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: create-savings-home
+expected_outcome: |
+  A phone home where the total saved is the biggest thing, the three pots show progress against their goals, adding money is one tap within thumb reach, recent movements show signed amounts at the right edge, and the screen looks like a current consumer finance app without any of the generated template.
+context:
+  scaffold_script: place-files.sh

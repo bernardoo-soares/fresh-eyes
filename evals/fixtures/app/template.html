@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Template devices</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 0; padding: 24px; color: #111; background: #fafaf7; }
+  .grid { background-image: linear-gradient(#eee 1px, transparent 1px), linear-gradient(90deg, #eee 1px, transparent 1px); background-size: 32px 32px; padding: 24px; }
+  .glow { position: absolute; top: 0; right: 0; width: 240px; height: 240px; background: #f97316; opacity: .3; filter: blur(60px); }
+  .eyebrow { display: inline-block; padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px; font: 12px ui-monospace, Menlo, monospace; letter-spacing: .2em; text-transform: uppercase; }
+  .eyebrow-sans { display: inline-block; padding: 4px 12px; background: #eef2ff; border-radius: 999px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { font-size: 44px; line-height: 1.1; color: #111; }
+  h1 em { font-style: normal; color: #c2410c; text-decoration: underline; }
+  .lede { text-align: center; max-width: 360px; margin: 0 auto; }
+  .cta { display: inline-block; padding: 14px 24px; border-radius: 999px; background: #c2410c; color: #fff; text-decoration: none; margin: 8px 0; }
+  .bubble { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: #2563eb; color: #fff; border: 0; }
+  .box { border: 1px solid #ddd; border-radius: 12px; padding: 16px; min-height: 60px; }
+</style></head>
+<body>
+  <div class="grid"><div class="glow"></div>
+    <p><span class="eyebrow">Version two is here.</span></p>
+    <p><span class="eyebrow-sans">Two-minute setup</span></p>
+    <h1>Plan, track and ship your work. <em>All in one place.</em></h1>
+    <p class="lede">This is a centred paragraph of body text that runs over several lines so that it reads like the marketing copy under a hero headline on a landing page.</p>
+    <a class="cta" href="#a">Sign up for free</a>
+  </div>
+  <div class="box">Outer panel
+    <div class="box">Middle card
+      <div class="box">Inner card</div>
+    </div>
+  </div>
+  <a class="cta" href="#b">Sign up for free</a>
+  <button class="bubble" aria-label="Chat with us">?</button>
+  <button disabled style="position:absolute;top:120px;left:24px;width:200px;height:44px">Import fixed rows</button>
+</body></html>

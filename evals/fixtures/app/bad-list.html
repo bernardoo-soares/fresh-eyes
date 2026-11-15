@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loans</title>
+<style>
+  body { margin:0; font:14px/1.4 system-ui, sans-serif; background:#fff; color:#111; }
+  .bar { display:flex; gap:4px; padding:12px; }
+  .icon-btn { width:16px; height:16px; padding:0; border:0; background:#e5e7eb; }
+  .muted { color:#9ca3af; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { padding:6px 8px; border-bottom:1px solid #eee; text-align:left; }
+  .tabs a { margin-right:12px; color:#2563eb; }
+  button:focus { outline:none; }
+</style>
+</head>
+<body>
+<div class="tabs"><a href="#">All</a><a href="#">On loan</a><a href="#" onclick="download()">Export</a></div>
+<div class="bar"><button class="icon-btn"></button><button class="icon-btn"></button><input type="text" name="q"></div>
+<table>
+  <tr><th>Title</th><th>Borrower</th><th>Status</th></tr>
+  <tr><td>The Long Way Home</td><td>R. Okafor</td><td class="muted">Due soon</td></tr>
+  <tr><td>A Field Guide to Moss</td><td>L. Brandt</td><td class="muted">On loan</td></tr>
+</table>
+</body>
+</html>

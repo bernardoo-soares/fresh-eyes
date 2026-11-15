@@ -1,0 +1,24 @@
+{
+  "name": "fresh-eyes",
+  "displayName": "Fresh eyes",
+  "version": "1.0.0",
+  "description": "Creates and reviews web product UI from the person's task and real content, checked by rendering it and by a fresh pair of eyes.",
+  "author": {
+    "name": "Bernardo Soares"
+  },
+  "homepage": "https://github.com/bernardoo-soares/fresh-eyes",
+  "repository": "https://github.com/bernardoo-soares/fresh-eyes",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "design",
+    "web",
+    "accessibility",
+    "wcag",
+    "review",
+    "dashboard",
+    "forms",
+    "landing page"
+  ]
+}
