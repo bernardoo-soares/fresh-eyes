@@ -1,5 +1,29 @@
 # fresh-eyes
 
+**Claude's UI, without the AI look.** A skill that builds and reviews web product screens, then checks them the
+way a person would: it renders every page, measures what a script can see, and shows the screenshots to a second
+agent that has never seen the code.
+
+![Same request, two builds: Claude alone on the left, Claude with fresh-eyes on the right](https://bernardoo-soares.github.io/fresh-eyes/hero.png)
+
+**[Play the blind test: which would you ship?](https://bernardoo-soares.github.io/fresh-eyes/)** 11 pairs, the
+same request built by Claude alone and by Claude with fresh-eyes.
+
+```bash
+claude plugin marketplace add bernardoo-soares/fresh-eyes
+claude plugin install fresh-eyes@fresh-eyes
+```
+
+| Same 12 requests, same model | fresh-eyes | Claude alone |
+|---|---|---|
+| Picked in the author's blind test (latest round per request) | 11 of 11 | 0 of 11 |
+| Graded checks passed | 95% (69 of 73) | 89% (65 of 73) |
+| Pages with measured problems (contrast, focus, overflow, targets) | 0 of 12 | 9 of 12 |
+
+One person's blind votes, so read them as one careful opinion, not a survey. [How it was tested](#how-it-was-tested).
+
+## In more words
+
 A Claude skill that creates and reviews web product UI (app screens, dashboards, settings, tables, forms,
 onboarding, empty and error states, and the landing, home and pricing pages that sell the product) so it reads as
 made by a thoughtful person, not a template.
@@ -141,9 +165,12 @@ Each version was run against plain Claude on the same requests, with the same mo
   that shows two versions side by side, in random order, with desktop and phone views. The voter sees the request,
   never which version came from where.
 
-In the latest round, the skill won 8 of 11 blind votes against plain Claude, with none marked worse; 92% of the
-graded checks passed; all 12 of its outputs were clean on `render.mjs`, while plain Claude's outputs had measured
-problems on 9 of 12. The votes are one person's, so read them as one careful opinion, not a survey.
+For 1.0.0, the skill won 6 of 11 blind votes against plain Claude in one round; the author's notes on the five it
+lost became rules, and a rerun of those five won 5 of 5, so every request's latest version was picked over Claude
+alone. In that round 69 of 73 graded checks passed (plain Claude: 65 of 73), and none of the skill's pages had a
+problem `render.mjs` can measure, against 9 of 12 for plain Claude. The votes are one person's, so read them as one
+careful opinion, not a survey. A full screen costs more tokens with the skill (it renders and looks again), so small
+requests run a shorter loop.
 
 `npm test` runs the script tests.
 

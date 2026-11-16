@@ -65,8 +65,9 @@ Use it for creating and for reviewing. For a review, read `references/review.md`
 7. **Fix and stop.** Fix each hesitation with structure first (a label, a list, a visual, a regrouping); add a
    sentence only when nothing else can carry it. A doubt about a name is fixed by a better name, never by a line
    of explanation under it, and nothing is ever explained inside a menu. At most two more rounds of steps 5 and
-   6, then name what is still open. Answer the three questions of the test in `references/modern.md` (which category product would
-   call this current; where the signature is; could this belong to any startup), and report.
+   6, then name what is still open. Answer the three questions of the test in `references/modern.md` (which
+   category product would call this current; where the signature is; could this belong to any startup), and
+   report.
 
 **The simplest path first.** The main action works the moment the screen opens; extra capability (editing every
 row, bulk tools) sits one level down, never in the first screen's way (`references/structure.md`).
